@@ -1,0 +1,251 @@
+/* Basic reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: flex-start; /* Align content to the top */
+    align-items: center; /* Center horizontally */
+    height: 100vh;
+    text-align: center;
+    flex-direction: column; /* Stack the content vertically */
+    padding: 20px;
+    overflow: hidden; /* Prevent scrolling */
+  }
+  
+  h1 {
+    font-size: 2em; /* Slightly smaller title */
+    margin-bottom: 30px; /* Adjust space below title */
+    color: #333;
+    text-align: center;
+    width: 100%;
+    position:relative
+  }
+  
+  /* Main container to hold the suite divs */
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Reduced gap between boxes */
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow-y: auto; /* Allow scrolling within the main container if needed */
+  }
+  
+  /* Styles for each suite */
+  .suite {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #fff;
+    padding: 50px; /* Smaller padding */
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    flex-grow: 1; /* Allow boxes to grow proportionally */
+    max-height: 120px; /* Limit the height of each box */
+    overflow: hidden; /* Prevent overflow if content is too large */
+  }
+  
+  .suite:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Image styles */
+  .suite img {
+    width: 90px; /* Smaller image */
+    height: auto;
+    margin-right: 15px; /* Smaller margin */
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  
+  /* Text content styles */
+  .suite h2 {
+    font-size: 1.3em; /* Smaller title in each box */
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .suite p {
+    font-size: 0.9em; /* Slightly smaller text */
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 0;
+  }
+  
+  /* Styling for individual suite divs */
+  .suite:nth-child(1) {
+    background-color: #e9f7fa;
+  }
+  
+  .suite:nth-child(2) {
+    background-color: #fff3e0;
+  }
+  
+  .suite:nth-child(3) {
+    background-color: #e8f5e9;
+  }
+  
+  .suite:nth-child(4) {
+    background-color: #f3e5f5;
+  }
+  
+  .suite:nth-child(5) {
+    background-color: #fffde7;
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    .suite {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .suite img {
+      margin-right: 0;
+      margin-bottom: 15px;
+      width: 80px;
+    }
+  
+    h1 {
+      font-size: 1.8em; /* Slightly smaller title for small screens */
+    }
+  
+    .suite h2 {
+      font-size: 1.1em; /* Smaller titles in the suites for small screens */
+    }
+  
+    .suite p {
+      font-size: 0.85em; /* Smaller text for smaller screens */
+    }
+  }
+  
+  .home {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  
+  .home img {
+    width: 75px; /* Adjust size as needed */
+    height: auto;
+  }
+
+  input[type="file"] {
+    display: none; /* Hide the default file input */
+  }
+  
+  label[for="img"] {
+    display: block;
+    width: 100%;
+    height: 200px; /* Set height for the drag-and-drop box */
+    margin-bottom: 20px;
+    background-color: #ddd; /* Light gray background */
+    border: 2px dashed #aaa; /* Dashed border */
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #333;
+    text-align: center;
+    padding-top: 80px; /* Center the text inside the box */
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for the file input box */
+  label[for="img"]:hover {
+    background-color: #ccc;
+  }
+
+  p {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Styling for the form's submit button */
+  input[type="submit"] {
+    margin-top: 20px;
+    padding: 12px 25px; /* Larger padding for a more prominent button */
+    background-color: #007bff; /* Primary blue background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%; /* Full width for better visual balance */
+    max-width: 250px; /* Optional: limit width */
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+  }
+  
+  input[type="submit"]:active {
+    background-color: #004085; /* Even darker blue on active click */
+    transform: translateY(1px); /* Simulate button being pressed */
+  }
+  
+  input[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(38, 143, 255, 0.5); /* Focus ring */
+  }
+
+
+  .question {
+    margin-bottom: 20px; /* Space below the question */
+  }
+  
+  .question h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin: 0;
+  }
+  
+  .answer-container {
+    display: flex; /* Flexbox to align the buttons side by side */
+    justify-content: center; /* Center buttons horizontally */
+    align-items: center; /* Vertically center buttons within the container */
+    gap: 20px; /* Space between the buttons */
+  }
+  
+  /* Styling for the buttons */
+  button {
+    padding: 12px 25px;
+    background-color: #007bff; /* Primary blue background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    width: 150px; /* Fixed width for the buttons */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+  }
+  
+  button:active {
+    background-color: #004085; /* Even darker blue on active click */
+    transform: translateY(1px); /* Simulate button being pressed */
+  }
+  
+  button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(38, 143, 255, 0.5); /* Focus ring */
+  }
