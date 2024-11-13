@@ -130,6 +130,15 @@
       font-size: 0.85em; /* Smaller text for smaller screens */
     }
   }
+
+  .logo {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 100px; /* Adjust size of logo */
+    height: auto;
+    z-index: 10; /* Ensures the logo stays on top of other elements */
+  }
   
   .home {
     position: absolute;
@@ -167,12 +176,7 @@
     background-color: #ccc;
   }
 
-  p {
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: #333;
-    font-weight: bold;
-  }
+
   
   /* Styling for the form's submit button */
   input[type="submit"] {
