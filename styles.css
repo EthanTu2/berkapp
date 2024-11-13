@@ -60,27 +60,36 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   }
   
-  /* Image styles */
   .suite img {
-    width: 90px; /* Smaller image */
+    width: 90px; /* Fixed image width */
     height: auto;
-    margin-right: 15px; /* Smaller margin */
+    margin-right: 15px; /* Space between image and text */
     border-radius: 5px;
     object-fit: cover;
   }
   
-  /* Text content styles */
-  .suite h2 {
-    font-size: 1.3em; /* Smaller title in each box */
-    color: #333;
-    margin-bottom: 8px;
+  /* Text container to stack title and description */
+  .suite .text-container {
+    display: flex;
+    flex-direction: column; /* Stack title and description vertically */
+    justify-content: flex-start; /* Align to the top */
   }
   
+  /* Title (h2) styles */
+  .suite h2 {
+    font-size: 1.3em; /* Adjust size for the title */
+    color: #333;
+    margin-bottom: 8px; /* Space between title and description */
+    text-align: center; /* Align the title to the left */
+  }
+  
+  /* Description (p) styles */
   .suite p {
-    font-size: 0.9em; /* Slightly smaller text */
+    font-size: 0.9em;
     color: #666;
     line-height: 1.4;
     margin-bottom: 0;
+    text-align: center; /* Align the description text to the left */
   }
   
   /* Styling for individual suite divs */
