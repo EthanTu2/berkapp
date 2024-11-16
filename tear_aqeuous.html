@@ -54,24 +54,24 @@
                     
                     <div class="form-group row">
                         
-                        <label class="col-sm-3 col-form-label"><b>Time (sec)</b></label>
+                        <label class="col-sm-3 col-form-label"><b>Time (min)</b></label>
                         
                         <label class="col-sm-5 col-form-label "><b>Wetted Length (mm)</b></label>
                         
                     </div>
                     <div class="form-group row" id = "data_0">
                         
-                        <input type="number" step="1" id="data_0_time"  class="form-control col-sm-2" value=180>
+                        <input type="number" step="1" id="data_0_time"  class="form-control col-sm-2" value=3>
                         
                         <input type="number" step="0.1" id="data_0_length"  class="form-control offset-sm-2 col-sm-2" value=1>
                         
                     </div>
                     <div class="form-group row" id = "data_1">
-                        <input type="number" step="1" id="data_1_time"  class="form-control col-sm-2" value=240>
+                        <input type="number" step="1" id="data_1_time"  class="form-control col-sm-2" value=4>
                         <input type="number" step="0.1" id="data_1_length"  class="form-control offset-sm-2 col-sm-2" value=2>
                     </div>
                     <div class="form-group row" id = "data_2">
-                        <input type="number" step="1" id="data_2_time"  class="form-control col-sm-2" value=300>
+                        <input type="number" step="1" id="data_2_time"  class="form-control col-sm-2" value=5>
                         <input type="number" step="0.1" id="data_2_length"  class="form-control offset-sm-2 col-sm-2" value=3>
                     </div>
 
@@ -143,7 +143,7 @@
                         title: {
                             display: true,
                             
-                            text: 'Time (sec)'
+                            text: 'Time (min)'
                         }
                     },
                     yAxes: {
@@ -236,7 +236,7 @@
 
             
             elem.after(clone);
-            document.getElementById("data_" + data_div_count + "_time").value = 15 + parseInt(document.getElementById("data_" + (data_div_count-1) + "_time").value)
+            document.getElementById("data_" + data_div_count + "_time").value = 1 + parseInt(document.getElementById("data_" + (data_div_count-1) + "_time").value)
             data_div_count = data_div_count + 1;
         });
 
@@ -311,11 +311,11 @@
                 // config.data.datasets.forEach(function(dataset, datasetIndex) {
                 //     dataset.data.pop();
                 // });
-                config.options.scales.xAxes.max = get_max_x(data_values) + 2
-                config.options.scales.yAxes.max = get_max_y(data_values) + 2
+                config.options.scales.xAxes.max = get_max_x(data_values) + 0.1
+                config.options.scales.yAxes.max = get_max_y(data_values) + 1
 
-                config.options.scales.xAxes.min = get_min_x(data_values) - 15 
-                config.options.scales.yAxes.min = get_min_y(data_values) - 2
+                config.options.scales.xAxes.min = get_min_x(data_values) - 0.2
+                config.options.scales.yAxes.min = get_min_y(data_values) - 1
                 
                 // config.options.scales.xAxes.max = config.options.scales.xAxes.max + parseInt(2)
                 // console.log(config.options.scales.xAxes.max)
@@ -356,6 +356,7 @@
                 var regression_line = {
                     // label: 'Regression Line: ' + my_regression.string,
                     label: 'Regression Line: ' + round(my_regression.equation[0], 2) + 'x + ' + round(my_regression.equation[1], 2),
+                    type: 'line',
                     backgroundColor: window.chartColors.red,
                     borderColor: window.chartColors.red,
                     data: useful_points,
@@ -383,7 +384,7 @@
                 window.myLine.update();
                 console.log(my_regression)
 
-                document.getElementById('production_rate').value = round(my_regression.equation[0] * 60 * 0.7 * 5 * 0.22, 2).toFixed(2)
+                document.getElementById('production_rate').value = round(my_regression.equation[0] * 0.7 * 5 * 0.22, 2).toFixed(2)
                 
                 // round(my_regression.equation[0] * 60 * 0.7, 3)
             }
