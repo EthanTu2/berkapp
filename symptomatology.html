@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Optometry App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Add some styling for the new boxes */
+      .new-box {
+        display: none; /* Hidden by default */
+        margin-top: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="home">
+      <a href="index.html"><img src="images/home.png" alt="Home"></a>
+    </div>
+
+    <h1>Berkeley Symptomatology</h1>
+
+    <main>
+      <div id="question-container">
+        <div class="question">
+          <h2>Do you wear Contact Lens?</h2>
+        </div>
+        <div class="answer-container">
+          <div class="answer">
+            <button id="yesButton">Yes</button>
+          </div>
+          <div class="answer">
+            <button id="noButton">No</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- New boxes for more options -->
+      <div id="yesBox" class="new-box">
+        <h3>Contact Lens Options</h3>
+        <div class="button-container">
+          <button>Berkeley Dry Eye Flow Chart (DEFC)</button>
+          <button>Ocular Surface Disease Index (OSDI)</button>
+          <button>Standard Patient Evaluation of Dye Dryness Questionnaire (SPEED)</button>
+          <button>Contact Lens Dry Eye Questionnaire 8 (CLDEQ-8)</button>
+          <button>Pain Sensitivity Questionnaire</button>
+        </div>
+        <button class="back-button" id="backFromYes">Back</button>
+      </div>
+
+      <div id="noBox" class="new-box">
+        <h3>Non-Contact Lens Options</h3>
+        <div class="button-container">
+          <button>Berkeley Dry Eye Flow Chart (DEFC)</button>
+          <button>Ocular Surface Disease Index (OSDI)</button>
+          <button>Standard Patient Evaluation of Dye Dryness Questionnaire (SPEED)</button>
+          <button>Dry Eye Questionnaire 5 (DEQ-5)</button>
+          <button>Pain Sensitivity Questionnaire</button>
+        </div>
+        <button class="back-button" id="backFromNo">Back</button>
+      </div>
+    </main>
+
+    <img src="images/logo.jpg" alt="Logo" class="logo" />
+
+    <script>
+      // JavaScript to handle button clicks
+      document.getElementById("yesButton").addEventListener("click", function () {
+        // Show "Yes" options
+        document.getElementById("yesBox").style.display = "block";
+        document.getElementById("noBox").style.display = "none";
+        // Hide the original question and answers
+        document.getElementById("question-container").style.display = "none";
+      });
+
+      document.getElementById("noButton").addEventListener("click", function () {
+        // Show "No" options
+        document.getElementById("noBox").style.display = "block";
+        document.getElementById("yesBox").style.display = "none";
+        // Hide the original question and answers
+        document.getElementById("question-container").style.display = "none";
+      });
+
+      // Back button in "Yes" box
+      document.getElementById("backFromYes").addEventListener("click", function () {
+        document.getElementById("yesBox").style.display = "none";
+        document.getElementById("question-container").style.display = "block";
+      });
+
+      // Back button in "No" box
+      document.getElementById("backFromNo").addEventListener("click", function () {
+        document.getElementById("noBox").style.display = "none";
+        document.getElementById("question-container").style.display = "block";
+      });
+    </script>
+  </body>
+</html>
