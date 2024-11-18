@@ -355,7 +355,7 @@
 
                 var regression_line = {
                     // label: 'Regression Line: ' + my_regression.string,
-                    label: 'Regression Line: ' + round(my_regression.equation[0], 2) + 'x + ' + round(my_regression.equation[1], 2),
+                    label: 'Regression Line: ' + round(my_regression.equation[0]/60, 2) + 'x + ' + round(my_regression.equation[1], 2),
                     type: 'line',
                     backgroundColor: window.chartColors.red,
                     borderColor: window.chartColors.red,
